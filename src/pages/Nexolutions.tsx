@@ -5,6 +5,9 @@ import ServiceCard from "@/components/ServiceCard";
 
 const Nexolutions = () => {
   const calendlyUrl = "https://calendly.com/nexolutions/30min";
+  const email = "nexolutions.tech@gmail.com";
+  const instagramUrl = "https://www.instagram.com/nexolutions.ai/";
+  const linkedinUrl = "https://www.linkedin.com/company/nexolutions-ai";
 
   return (
     <main className="antialiased bg-background text-foreground font-jakarta">
@@ -269,7 +272,7 @@ const Nexolutions = () => {
                 Book call
               </Button>
             </a>
-            <p className="text-nexo-gray-400 font-inter">or mail us at <a href="mailto:hey@sanny.ai" className="underline">hey@sanny.ai</a></p>
+            <p className="text-nexo-gray-400 font-inter">or mail us at <a href={`mailto:${email}`} className="underline">{email}</a></p>
           </div>
         </div>
       </section>
@@ -283,15 +286,76 @@ const Nexolutions = () => {
             Book call
           </Button>
         </a>
-        <p className="mt-4 text-nexo-gray-400 font-inter">or mail us at <a href="mailto:nexolutions.tech@gmail.com" className="underline">nexolutions.tech@gmail.com</a></p>
+        <p className="mt-4 text-nexo-gray-400 font-inter">or mail us at <a href={`mailto:${email}`} className="underline">{email}</a></p>
+      </section>
+
+      {/* Free Demo Call Section */}
+      <section className="pb-16 px-4 md:px-8 lg:px-32">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="flex-shrink-0">
+              <img 
+                src="/lovable-uploads/0688e47d-05ef-4b1d-8aff-3a91e5e88a7c.png" 
+                alt="Vlad from Nexolutions" 
+                className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-nexo-purple shadow-lg"
+              />
+            </div>
+            <div className="flex-1 text-center md:text-left">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Free 15-Minute Demo Call</h2>
+              <p className="text-lg text-nexo-gray-300 font-inter mb-6">
+                In just 15 minutes, I'll show you exactly how to unlock hidden revenue, automate your workflows, and scale your business faster — using a mix of AI-powered, no-code, and custom-code solutions tailored to your needs.
+              </p>
+              
+              <div className="mb-6">
+                <h3 className="text-xl font-semibold mb-4 text-nexo-gray-200">This call is perfect for:</h3>
+                <ul className="text-nexo-gray-300 font-inter space-y-2 text-left max-w-2xl">
+                  <li>• E-commerce stores ready to turn browsers into buyers with automated funnels</li>
+                  <li>• Course creators & info-businesses wanting to streamline sales and delivery</li>
+                  <li>• Businesses drowning in repetitive work and ready to put operations on autopilot</li>
+                  <li>• Founders who want measurable results without the guesswork</li>
+                  <li>• Brands looking for a partner who will treat their growth like our own</li>
+                </ul>
+              </div>
+              
+              <p className="text-lg text-nexo-gray-300 font-inter mb-8">
+                Book a spot on Vlad's calendar today — and let's map out a plan to make your business run smoother, sell smarter, and grow faster.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 items-center justify-center md:justify-start">
+                <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
+                  <Button variant="nexo" size="xl" className="w-full sm:w-auto">
+                    Book Your Free Demo Call
+                  </Button>
+                </a>
+                <div className="flex gap-4">
+                  <a href={`mailto:${email}`} className="text-nexo-gray-300 hover:text-nexo-purple transition-colors">
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+                    </svg>
+                  </a>
+                  <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" className="text-nexo-gray-300 hover:text-nexo-purple transition-colors">
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452H16.893V14.883C16.893 13.555 16.866 11.846 15.041 11.846C13.188 11.846 12.905 13.291 12.905 14.785V20.452H9.351V9H12.765V10.561H12.811C13.288 9.661 14.448 8.711 16.181 8.711C19.782 8.711 20.448 11.081 20.448 14.166V20.452H20.447ZM5.337 7.433C4.193 7.433 3.274 6.507 3.274 5.368C3.274 4.23 4.194 3.305 5.337 3.305C6.477 3.305 7.401 4.23 7.401 5.368C7.401 6.507 6.476 7.433 5.337 7.433ZM7.119 20.452H3.555V9H7.119V20.452ZM22.225 0H1.771C0.792 0 0 0.774 0 1.729V22.271C0 23.227 0.792 24 1.771 24H22.222C23.2 24 24 23.227 24 22.271V1.729C24 0.774 23.2 0 22.222 0H22.225Z"/>
+                    </svg>
+                  </a>
+                  <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="text-nexo-gray-300 hover:text-nexo-purple transition-colors">
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2.163C15.204 2.163 15.584 2.175 16.85 2.233C20.102 2.381 21.621 3.924 21.769 7.152C21.827 8.417 21.838 8.797 21.838 12.001C21.838 15.206 21.826 15.585 21.769 16.85C21.62 20.075 20.105 21.621 16.85 21.769C15.584 21.827 15.206 21.839 12 21.839C8.796 21.839 8.416 21.827 7.151 21.769C3.891 21.62 2.38 20.07 2.232 16.849C2.174 15.584 2.162 15.205 2.162 12C2.162 8.796 2.175 8.417 2.232 7.151C2.381 3.924 3.896 2.38 7.151 2.232C8.417 2.175 8.796 2.163 12 2.163ZM12 5.838C8.597 5.838 5.838 8.597 5.838 12S8.597 18.163 12 18.163 18.162 15.404 18.162 12 15.403 5.838 12 5.838ZM12 15.162C10.238 15.162 8.838 13.762 8.838 12S10.238 8.838 12 8.838 15.162 10.238 15.162 12 13.762 15.162 12 15.162ZM19.846 5.595C19.846 4.8 19.2 4.154 18.406 4.154S16.966 4.8 16.966 5.595 17.61 6.439 18.406 6.439 19.846 6.034 19.846 5.595Z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Footer */}
       <footer className="py-8 px-4 md:px-8 lg:px-32 text-center text-nexo-gray-400 font-inter text-sm">
         <p>2025 © NEXOLUTIONS® AI Agency Inc.</p>
         <div className="mt-2">
-          <a href="https://www.linkedin.com/company/nexolutions-ai" target="_blank" rel="noopener noreferrer" className="mx-2 hover:underline">LinkedIn</a>
-          <a href="https://www.instagram.com/nexolutions.ai/" target="_blank" rel="noopener noreferrer" className="mx-2 hover:underline">INSTA</a>
+          <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" className="mx-2 hover:underline">LinkedIn</a>
+          <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="mx-2 hover:underline">INSTA</a>
         </div>
       </footer>
     </main>
