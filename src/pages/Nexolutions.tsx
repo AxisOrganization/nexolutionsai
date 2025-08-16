@@ -1,9 +1,12 @@
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 import NexoLogo from "@/components/NexoLogo";
 import StepCard from "@/components/StepCard";
 import ServiceCard from "@/components/ServiceCard";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const Nexolutions = () => {
+  const { t } = useLanguage();
   const calendlyUrl = "https://calendly.com/nexolutions/30min";
   const email = "nexolutions.tech@gmail.com";
   const instagramUrl = "https://www.instagram.com/nexolutions.ai/";
@@ -13,19 +16,20 @@ const Nexolutions = () => {
     <main className="antialiased bg-background text-foreground font-jakarta">
       {/* Hero Section */}
       <section className="pt-8 pb-16 px-4 md:px-8 lg:px-32">
-        <div className="flex justify-end mb-8">
+        <div className="flex justify-between items-center mb-8">
+          <LanguageSwitcher />
           <NexoLogo />
         </div>
         <div className="text-center">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-none">
-            AI Services<br />for your Business<br />Growth
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-none whitespace-pre-line">
+            {t('hero.title')}
           </h1>
           <p className="mt-6 max-w-xl mx-auto text-lg md:text-xl font-inter text-nexo-gray-300">
-            We'll pump your company with AI. As a leading AI automation agency We deliver top results.
+            {t('hero.subtitle')}
           </p>
           <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
             <Button variant="nexo" size="xl" className="mt-8">
-              Speak to Team
+              {t('hero.cta')}
             </Button>
           </a>
         </div>
@@ -35,11 +39,11 @@ const Nexolutions = () => {
       <section className="pb-16 px-4 md:px-8 lg:px-32">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-            Enhance your workflows to maximize performance and take effective control of your time. Focus on what truly matters to your business, while routine tasks run on autopilot with the help of our no-code and code-based solutions.
+            {t('enhance.title')}
           </h2>
           <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
             <Button variant="nexo" size="xl" className="mt-8">
-              Speak to Team
+              {t('hero.cta')}
             </Button>
           </a>
         </div>
@@ -47,27 +51,27 @@ const Nexolutions = () => {
 
       {/* How it Works */}
       <section className="pb-16 px-4 md:px-8 lg:px-32">
-        <h2 className="text-5xl font-bold mb-12">How it works?</h2>
+        <h2 className="text-5xl font-bold mb-12">{t('how.title')}</h2>
         <div className="grid md:grid-cols-2 gap-6">
           <StepCard
             step="Step 1"
-            title="Book a call"
-            description="If our services is a good fit, we'll reach out the same day for a introductory discussion. Plans & Pricing ↓"
+            title={t('step1.title')}
+            description={t('step1.description')}
           />
           <StepCard
             step="Step 2"
-            title="Share your vision"
-            description="Once we have your vision, we'll analyse your goals, business requirements and constraints, break the project into bite-sized tasks, and start implementing."
+            title={t('step2.title')}
+            description={t('step2.description')}
           />
           <StepCard
             step="Step 3"
-            title="Continuous results"
-            description="Our team effectively solves your tasks and implements AI as a strategic asset, ensuring it becomes an integral part of your company's workflow."
+            title={t('step3.title')}
+            description={t('step3.description')}
           />
           <StepCard
             step="Step 4"
-            title="Enjoy the growth"
-            description="Our results drive your business growth, which is our main goal. We offer detailed instructions, training, and tech support as long as you need to maximize our work's value."
+            title={t('step4.title')}
+            description={t('step4.description')}
             icon={
               <svg className="w-16 h-16 mx-auto text-nexo-gray-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 2L14.4 9.6H22L16.3 14.4L18.7 22L12 17.2L5.3 22L7.7 14.4L2 9.6H9.6L12 2Z" fill="currentColor"/>
@@ -78,7 +82,7 @@ const Nexolutions = () => {
         <div className="text-center mt-12">
           <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
             <Button variant="nexo" size="xl">
-              Speak to Team
+              {t('hero.cta')}
             </Button>
           </a>
         </div>
@@ -87,30 +91,30 @@ const Nexolutions = () => {
             <svg className="mx-auto mb-4 w-10 h-10 text-nexo-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
-            <p className="text-lg font-medium">Quick onboarding faster than new hires</p>
+            <p className="text-lg font-medium">{t('features.onboarding')}</p>
           </div>
           <div className="text-center">
             <svg className="mx-auto mb-4 w-10 h-10 text-nexo-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
             </svg>
-            <p className="text-lg font-medium">Updates weekly after agreeing on tasks</p>
+            <p className="text-lg font-medium">{t('features.updates')}</p>
           </div>
           <div className="text-center">
             <svg className="mx-auto mb-4 w-10 h-10 text-nexo-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <p className="text-lg font-medium">Revisions to your full satisfaction</p>
+            <p className="text-lg font-medium">{t('features.revisions')}</p>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
       <section className="pb-16 px-4 md:px-8 lg:px-32">
-        <h2 className="text-5xl font-bold text-center mb-12">Services</h2>
+        <h2 className="text-5xl font-bold text-center mb-12">{t('services.title')}</h2>
         <div className="relative grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <ServiceCard
-            title="Business process automation"
-            description="Let AI handle repetitive tasks and workflows. Improve efficiency, minimize errors, and free up time for strategic work, ultimately driving cost savings."
+            title={t('service1.title')}
+            description={t('service1.description')}
             className="service-card-1"
             icon={
               <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
@@ -119,8 +123,8 @@ const Nexolutions = () => {
             }
           />
           <ServiceCard
-            title="Integrate AI into your company's data"
-            description="Our AI automation services empower you to leverage data-driven automation, generate actionable insights, and use predictive analytics to support informed decision-making."
+            title={t('service2.title')}
+            description={t('service2.description')}
             className="service-card-2"
             icon={
               <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
@@ -129,8 +133,8 @@ const Nexolutions = () => {
             }
           />
           <ServiceCard
-            title="AI-powered apps development"
-            description="We develop apps that deliver personalized, real-time insights and transform user experiences, including AI chatbots, image recognition for augmented reality, and predictive analytics for top-tier recommendations."
+            title={t('service3.title')}
+            description={t('service3.description')}
             className="service-card-3"
             icon={
               <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
@@ -139,8 +143,8 @@ const Nexolutions = () => {
             }
           />
           <ServiceCard
-            title="AI automation consulting"
-            description="Looking to find the best solution for your needs? We offer tailored consultations to provide custom solutions that align with your specific processes and industry requirements."
+            title={t('service4.title')}
+            description={t('service4.description')}
             className="service-card-4"
             icon={
               <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
@@ -149,8 +153,8 @@ const Nexolutions = () => {
             }
           />
           <ServiceCard
-            title="Generative AI integration"
-            description="No more wasting hours on content creation − whether it's copy, images, videos, or voiceovers. We streamline the process, enabling you to produce content up to 27x faster."
+            title={t('service5.title')}
+            description={t('service5.description')}
             className="service-card-5"
             icon={
               <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
@@ -159,8 +163,8 @@ const Nexolutions = () => {
             }
           />
           <ServiceCard
-            title="Ongoing Maintenance and Support"
-            description="We don't stop at project delivery. As your partners, we provide continuous improvements, scalability options, and ongoing support to ensure your project grows alongside your business."
+            title={t('service6.title')}
+            description={t('service6.description')}
             className="service-card-6"
             icon={
               <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
@@ -174,27 +178,27 @@ const Nexolutions = () => {
       {/* Suitable For */}
       <section className="pb-16 px-4 md:px-8 lg:px-32">
         <div className="max-w-4xl">
-          <h2 className="text-5xl font-bold">We are suitable for</h2>
-          <p className="mt-4 text-lg text-nexo-gray-400 font-inter">Because we can solve the challenges that other companies can't reach</p>
+          <h2 className="text-5xl font-bold">{t('suitable.title')}</h2>
+          <p className="mt-4 text-lg text-nexo-gray-400 font-inter">{t('suitable.subtitle')}</p>
           <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
             <Button variant="nexo" size="xl" className="mt-6">
-              Speak to Team
+              {t('hero.cta')}
             </Button>
           </a>
         </div>
         <div className="mt-12 space-y-8 md:space-y-0 md:flex md:flex-col md:gap-8">
           <div className="bg-white text-black rounded-2xl p-8 max-w-xl hover-scale">
-            <h3 className="text-3xl font-bold">Small business</h3>
+            <h3 className="text-3xl font-bold">{t('business.title')}</h3>
             <svg className="w-24 h-24 mx-auto my-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="10" strokeWidth="2" />
               <circle cx="18" cy="6" r="4" strokeWidth="2" />
               <circle cx="6" cy="18" r="4" strokeWidth="2" />
             </svg>
-            <h4 className="text-2xl font-bold">AI automation</h4>
-            <p className="mt-4 text-gray-700 font-inter">Looking to streamline operations and enhance customer engagement? Our tailored AI solutions can help you optimize processes, improve decision-making, and drive growth. Let us empower your small business to compete more effectively in today's market.</p>
+            <h4 className="text-2xl font-bold">{t('business.subtitle')}</h4>
+            <p className="mt-4 text-gray-700 font-inter">{t('business.description')}</p>
           </div>
           <div className="bg-nexo-purple text-white rounded-2xl p-8 max-w-xl md:ml-auto hover-scale">
-            <h3 className="text-3xl font-bold">Active products</h3>
+            <h3 className="text-3xl font-bold">{t('products.title')}</h3>
             <svg className="w-24 h-24 mx-auto my-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="10" strokeWidth="2" />
               <circle cx="12" cy="4" r="2" />
@@ -204,89 +208,89 @@ const Nexolutions = () => {
               <circle cx="6" cy="6" r="2" />
               <circle cx="18" cy="18" r="2" />
             </svg>
-            <h4 className="text-2xl font-bold">Add AI features</h4>
-            <p className="mt-4 font-inter">Already have an impressive, cutting-edge product? Let's take it further. We'll add powerful AI features to automate tasks, improve user engagement, and boost overall efficiency, making your business more effective.</p>
+            <h4 className="text-2xl font-bold">{t('products.subtitle')}</h4>
+            <p className="mt-4 font-inter">{t('products.description')}</p>
           </div>
           <div className="bg-card rounded-2xl p-8 max-w-xl hover-scale">
-            <h3 className="text-3xl font-bold">Startups</h3>
+            <h3 className="text-3xl font-bold">{t('startups.title')}</h3>
             <svg className="w-24 h-24 mx-auto my-6 text-nexo-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <circle cx="8" cy="12" r="4" strokeWidth="2" />
               <circle cx="16" cy="12" r="4" strokeWidth="2" />
             </svg>
-            <h4 className="text-2xl font-bold">AI product from scratch</h4>
-            <p className="mt-4 text-nexo-gray-400 font-inter">Got a revolutionary AI idea? With our expertise in helping startups, we'll turn your concept into a scalable MVP ready for future success. Together, we'll strike the perfect balance between innovation and productivity.</p>
+            <h4 className="text-2xl font-bold">{t('startups.subtitle')}</h4>
+            <p className="mt-4 text-nexo-gray-400 font-inter">{t('startups.description')}</p>
           </div>
         </div>
       </section>
 
       {/* Pricing */}
       <section className="pb-16 px-4 md:px-8 lg:px-32">
-        <h2 className="text-5xl font-bold">Pricing</h2>
-        <p className="mt-4 text-lg text-nexo-gray-400 font-inter">One monthly fee, no surprises. Simple pricing with no hidden costs, just ongoing AI automation support when you need it.</p>
+        <h2 className="text-5xl font-bold">{t('pricing.title')}</h2>
+        <p className="mt-4 text-lg text-nexo-gray-400 font-inter">{t('pricing.subtitle')}</p>
         <div className="mt-12 grid md:grid-cols-2 gap-8">
           <div className="bg-card rounded-2xl p-8 hover-scale">
-            <h3 className="text-xl font-medium text-nexo-gray-300">Starter</h3>
-            <h4 className="text-6xl font-extrabold">989 USD</h4>
-            <p className="text-nexo-gray-400 text-sm">per month</p>
+            <h3 className="text-xl font-medium text-nexo-gray-300">{t('starter.title')}</h3>
+            <h4 className="text-6xl font-extrabold">{t('starter.price')}</h4>
+            <p className="text-nexo-gray-400 text-sm">{t('starter.period')}</p>
             <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
               <Button variant="nexo-white" size="xl" className="mt-6 w-full md:w-auto">
-                Get started
+                {t('getStarted')}
               </Button>
             </a>
             <ul className="mt-8 space-y-4 text-nexo-gray-400 font-inter">
-              <li>○ Up to 2 projects at a time</li>
-              <li>○ Leading experts</li>
-              <li>○ All services with limited code development</li>
-              <li>○ Up to 45 min/week for calls</li>
-              <li>○ Support on a first-come, first-served basis</li>
-              <li>○ Monthly analytics report</li>
-              <li>○ Pause or cancel anytime</li>
+              <li>○ {t('starter.feature1')}</li>
+              <li>○ {t('starter.feature2')}</li>
+              <li>○ {t('starter.feature3')}</li>
+              <li>○ {t('starter.feature4')}</li>
+              <li>○ {t('starter.feature5')}</li>
+              <li>○ {t('starter.feature6')}</li>
+              <li>○ {t('starter.feature7')}</li>
             </ul>
           </div>
           <div className="bg-white text-black rounded-2xl p-8 hover-scale">
-            <h3 className="text-xl font-medium text-nexo-gray-700">Master</h3>
-            <h4 className="text-6xl font-extrabold">2 899 USD</h4>
-            <p className="text-nexo-gray-400 text-sm">per month</p>
+            <h3 className="text-xl font-medium text-nexo-gray-700">{t('master.title')}</h3>
+            <h4 className="text-6xl font-extrabold">{t('master.price')}</h4>
+            <p className="text-nexo-gray-400 text-sm">{t('master.period')}</p>
             <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
               <Button variant="nexo" size="xl" className="mt-6 w-full md:w-auto">
-                Get started
+                {t('getStarted')}
               </Button>
             </a>
             <ul className="mt-8 space-y-4 text-nexo-gray-700 font-inter">
-              <li>○ Up to 6 projects at a time</li>
-              <li>○ Entire team</li>
-              <li>○ All services without limits</li>
-              <li>○ Up to 120 min/week for calls</li>
-              <li>○ Priority support in a way handy for you</li>
-              <li>○ Weekly analytics report</li>
-              <li>○ Pause or cancel anytime</li>
+              <li>○ {t('master.feature1')}</li>
+              <li>○ {t('master.feature2')}</li>
+              <li>○ {t('master.feature3')}</li>
+              <li>○ {t('master.feature4')}</li>
+              <li>○ {t('master.feature5')}</li>
+              <li>○ {t('master.feature6')}</li>
+              <li>○ {t('master.feature7')}</li>
             </ul>
           </div>
         </div>
         <div className="mt-12">
-          <h3 className="text-3xl font-bold">Custom offer</h3>
-          <p className="mt-4 text-lg text-nexo-gray-400 font-inter">Want fix pricing? Tell us more about your project</p>
+          <h3 className="text-3xl font-bold">{t('custom.title')}</h3>
+          <p className="mt-4 text-lg text-nexo-gray-400 font-inter">{t('custom.description')}</p>
           <div className="flex flex-col md:flex-row items-center gap-4 mt-6">
             <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
               <Button variant="nexo-outline" size="xl">
-                Book call
+                {t('bookCall')}
               </Button>
             </a>
-            <p className="text-nexo-gray-400 font-inter">or mail us at <a href={`mailto:${email}`} className="underline">{email}</a></p>
+            <p className="text-nexo-gray-400 font-inter">{t('orEmail')} <a href={`mailto:${email}`} className="underline">{email}</a></p>
           </div>
         </div>
       </section>
 
       {/* Still not sure */}
       <section className="pb-16 px-4 md:px-8 lg:px-32 text-center">
-        <h2 className="text-5xl font-bold">Still not sure?</h2>
-        <p className="mt-4 text-lg text-nexo-gray-400 font-inter max-w-xl mx-auto">Contact us to learn more about us and figure out how we can change your way with AI</p>
+        <h2 className="text-5xl font-bold">{t('stillNotSure.title')}</h2>
+        <p className="mt-4 text-lg text-nexo-gray-400 font-inter max-w-xl mx-auto">{t('stillNotSure.description')}</p>
         <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
           <Button variant="nexo-white" size="2xl" className="mt-8">
-            Book call
+            {t('bookCall')}
           </Button>
         </a>
-        <p className="mt-4 text-nexo-gray-400 font-inter">or mail us at <a href={`mailto:${email}`} className="underline">{email}</a></p>
+        <p className="mt-4 text-nexo-gray-400 font-inter">{t('orEmail')} <a href={`mailto:${email}`} className="underline">{email}</a></p>
       </section>
 
       {/* Free Demo Call Section */}
@@ -301,30 +305,30 @@ const Nexolutions = () => {
               />
             </div>
             <div className="flex-1 text-center md:text-left">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Free 15-Minute Demo Call</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">{t('demo.title')}</h2>
               <p className="text-lg text-nexo-gray-300 font-inter mb-6">
-                In just 15 minutes, I'll show you exactly how to unlock hidden revenue, automate your workflows, and scale your business faster — using a mix of AI-powered, no-code, and custom-code solutions tailored to your needs.
+                {t('demo.description')}
               </p>
               
               <div className="mb-6">
-                <h3 className="text-xl font-semibold mb-4 text-nexo-gray-200">This call is perfect for:</h3>
+                <h3 className="text-xl font-semibold mb-4 text-nexo-gray-200">{t('demo.perfectFor')}</h3>
                 <ul className="text-nexo-gray-300 font-inter space-y-2 text-left max-w-2xl">
-                  <li>• E-commerce stores ready to turn browsers into buyers with automated funnels</li>
-                  <li>• Course creators & info-businesses wanting to streamline sales and delivery</li>
-                  <li>• Businesses drowning in repetitive work and ready to put operations on autopilot</li>
-                  <li>• Founders who want measurable results without the guesswork</li>
-                  <li>• Brands looking for a partner who will treat their growth like our own</li>
+                  <li>• {t('demo.point1')}</li>
+                  <li>• {t('demo.point2')}</li>
+                  <li>• {t('demo.point3')}</li>
+                  <li>• {t('demo.point4')}</li>
+                  <li>• {t('demo.point5')}</li>
                 </ul>
               </div>
               
               <p className="text-lg text-nexo-gray-300 font-inter mb-8">
-                Book a spot on Vlad's calendar today — and let's map out a plan to make your business run smoother, sell smarter, and grow faster.
+                {t('demo.conclusion')}
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 items-center justify-center md:justify-start">
                 <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
                   <Button variant="nexo" size="xl" className="w-full sm:w-auto">
-                    Book Your Free Demo Call
+                    {t('demo.title')}
                   </Button>
                 </a>
                 <div className="flex gap-4">
@@ -352,7 +356,7 @@ const Nexolutions = () => {
 
       {/* Footer */}
       <footer className="py-8 px-4 md:px-8 lg:px-32 text-center text-nexo-gray-400 font-inter text-sm">
-        <p>2025 © NEXOLUTIONS® AI Agency Inc.</p>
+        <p>{t('footer.copyright')}</p>
         <div className="mt-2">
           <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" className="mx-2 hover:underline">LinkedIn</a>
           <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="mx-2 hover:underline">INSTA</a>
