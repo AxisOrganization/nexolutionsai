@@ -1,9 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import NexoLogo from "@/components/NexoLogo";
-import StepCard from "@/components/StepCard";
-import ServiceCard from "@/components/ServiceCard";
+import EnhancedStepCard from "@/components/EnhancedStepCard";
+import EnhancedServiceCard from "@/components/EnhancedServiceCard";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import ParallaxSection from "@/components/ParallaxSection";
+import MagneticButton from "@/components/MagneticButton";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Nexolutions = () => {
   const { t } = useLanguage();
@@ -11,28 +14,38 @@ const Nexolutions = () => {
   const email = "nexolutions.tech@gmail.com";
   const instagramUrl = "https://www.instagram.com/nexolutions.ai/";
   const linkedinUrl = "https://www.linkedin.com/company/nexolutions-ai";
+  
+  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation({ threshold: 0.1 });
+  const { ref: featuresRef, isVisible: featuresVisible } = useScrollAnimation({ threshold: 0.2 });
 
   return (
     <main className="antialiased bg-background text-foreground font-jakarta">
       {/* Hero Section */}
-      <section className="pt-8 pb-16 px-4 md:px-8 lg:px-32">
+      <section 
+        ref={heroRef}
+        className={`pt-8 pb-16 px-4 md:px-8 lg:px-32 transition-all duration-1000 ${
+          heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
+      >
         <div className="flex justify-between items-center mb-8">
           <LanguageSwitcher />
           <NexoLogo />
         </div>
-        <div className="text-center">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-none whitespace-pre-line">
-            {t('hero.title')}
-          </h1>
-          <p className="mt-6 max-w-xl mx-auto text-lg md:text-xl font-inter text-nexo-gray-300">
-            {t('hero.subtitle')}
-          </p>
-          <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
-            <Button variant="nexo" size="xl" className="mt-8">
-              {t('hero.cta')}
-            </Button>
-          </a>
-        </div>
+        <ParallaxSection speed={0.3}>
+          <div className="text-center">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-none whitespace-pre-line text-gradient animate-fade-in-up">
+              {t('hero.title')}
+            </h1>
+            <p className="mt-6 max-w-xl mx-auto text-lg md:text-xl font-inter text-nexo-gray-300 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
+              {t('hero.subtitle')}
+            </p>
+            <div className="mt-8 animate-scale-in" style={{ animationDelay: '400ms' }}>
+              <MagneticButton variant="premium" size="xl" href={calendlyUrl}>
+                {t('hero.cta')}
+              </MagneticButton>
+            </div>
+          </div>
+        </ParallaxSection>
       </section>
 
       {/* Enhance Workflows */}
@@ -51,56 +64,65 @@ const Nexolutions = () => {
 
       {/* How it Works */}
       <section className="pb-16 px-4 md:px-8 lg:px-32">
-        <h2 className="text-5xl font-bold mb-12">{t('how.title')}</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          <StepCard
-            step="Step 1"
-            title={t('step1.title')}
-            description={t('step1.description')}
-          />
-          <StepCard
-            step="Step 2"
-            title={t('step2.title')}
-            description={t('step2.description')}
-          />
-          <StepCard
-            step="Step 3"
-            title={t('step3.title')}
-            description={t('step3.description')}
-          />
-          <StepCard
-            step="Step 4"
-            title={t('step4.title')}
-            description={t('step4.description')}
-            icon={
-              <svg className="w-16 h-16 mx-auto text-nexo-gray-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L14.4 9.6H22L16.3 14.4L18.7 22L12 17.2L5.3 22L7.7 14.4L2 9.6H9.6L12 2Z" fill="currentColor"/>
-              </svg>
-            }
-          />
+        <div 
+          ref={featuresRef}
+          className={`transition-all duration-1000 ${
+            featuresVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
+          <h2 className="text-5xl font-bold mb-12 text-gradient">{t('how.title')}</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <EnhancedStepCard
+              step="Step 1"
+              title={t('step1.title')}
+              description={t('step1.description')}
+              delay={0}
+            />
+            <EnhancedStepCard
+              step="Step 2"
+              title={t('step2.title')}
+              description={t('step2.description')}
+              delay={100}
+            />
+            <EnhancedStepCard
+              step="Step 3"
+              title={t('step3.title')}
+              description={t('step3.description')}
+              delay={200}
+            />
+            <EnhancedStepCard
+              step="Step 4"
+              title={t('step4.title')}
+              description={t('step4.description')}
+              delay={300}
+              icon={
+                <svg className="w-16 h-16 mx-auto" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L14.4 9.6H22L16.3 14.4L18.7 22L12 17.2L5.3 22L7.7 14.4L2 9.6H9.6L12 2Z" fill="currentColor"/>
+                </svg>
+              }
+            />
+          </div>
         </div>
         <div className="text-center mt-12">
-          <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
-            <Button variant="nexo" size="xl">
-              {t('hero.cta')}
-            </Button>
-          </a>
+          <MagneticButton variant="hero" size="xl" href={calendlyUrl}>
+            {t('hero.cta')}
+          </MagneticButton>
         </div>
         <div className="flex flex-col md:flex-row justify-center gap-12 mt-12">
-          <div className="text-center">
-            <svg className="mx-auto mb-4 w-10 h-10 text-nexo-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="text-center animate-drift" style={{ animationDelay: '0s' }}>
+            <svg className="mx-auto mb-4 w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
             <p className="text-lg font-medium">{t('features.onboarding')}</p>
           </div>
-          <div className="text-center">
-            <svg className="mx-auto mb-4 w-10 h-10 text-nexo-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="text-center animate-drift" style={{ animationDelay: '1s' }}>
+            <svg className="mx-auto mb-4 w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
             </svg>
             <p className="text-lg font-medium">{t('features.updates')}</p>
           </div>
-          <div className="text-center">
-            <svg className="mx-auto mb-4 w-10 h-10 text-nexo-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="text-center animate-drift" style={{ animationDelay: '2s' }}>
+            <svg className="mx-auto mb-4 w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <p className="text-lg font-medium">{t('features.revisions')}</p>
@@ -110,62 +132,62 @@ const Nexolutions = () => {
 
       {/* Services Section */}
       <section className="pb-16 px-4 md:px-8 lg:px-32">
-        <h2 className="text-5xl font-bold text-center mb-12">{t('services.title')}</h2>
+        <h2 className="text-5xl font-bold text-center mb-12 text-gradient">{t('services.title')}</h2>
         <div className="relative grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <ServiceCard
+          <EnhancedServiceCard
             title={t('service1.title')}
             description={t('service1.description')}
-            className="service-card-1"
+            delay={0}
             icon={
               <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2L15.5 8.5L22 9L17 14L18.5 21L12 17.5L5.5 21L7 14L2 9L8.5 8.5L12 2Z"/>
               </svg>
             }
           />
-          <ServiceCard
+          <EnhancedServiceCard
             title={t('service2.title')}
             description={t('service2.description')}
-            className="service-card-2"
+            delay={100}
             icon={
               <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M3 3H21V21H3V3ZM5 5V19H19V5H5ZM7 7H17V9H7V7ZM7 11H17V13H7V11ZM7 15H14V17H7V15Z"/>
               </svg>
             }
           />
-          <ServiceCard
+          <EnhancedServiceCard
             title={t('service3.title')}
             description={t('service3.description')}
-            className="service-card-3"
+            delay={200}
             icon={
               <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.9 1 3 1.9 3 3V21C3 22.1 3.9 23 5 23H19C20.1 23 21 22.1 21 21V9Z"/>
               </svg>
             }
           />
-          <ServiceCard
+          <EnhancedServiceCard
             title={t('service4.title')}
             description={t('service4.description')}
-            className="service-card-4"
+            delay={300}
             icon={
               <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"/>
               </svg>
             }
           />
-          <ServiceCard
+          <EnhancedServiceCard
             title={t('service5.title')}
             description={t('service5.description')}
-            className="service-card-5"
+            delay={400}
             icon={
               <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2L13.09 8.26L19 7L14.74 11.74L21 12L14.74 12.26L19 17L13.09 15.74L12 22L10.91 15.74L5 17L9.26 12.26L3 12L9.26 11.74L5 7L10.91 8.26L12 2Z"/>
               </svg>
             }
           />
-          <ServiceCard
+          <EnhancedServiceCard
             title={t('service6.title')}
             description={t('service6.description')}
-            className="service-card-6"
+            delay={500}
             icon={
               <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM12 20C10.9 20 10 19.1 10 18C10 16.9 10.9 16 12 16C13.1 16 14 16.9 14 18C14 19.1 13.1 20 12 20ZM6 8C7.1 8 8 8.9 8 10C8 11.1 7.1 12 6 12C4.9 12 4 11.1 4 10C4 8.9 4.9 8 6 8ZM18 8C19.1 8 20 8.9 20 10C20 11.1 19.1 12 18 12C16.9 12 16 11.1 16 10C16 8.9 16.9 8 18 8Z"/>
