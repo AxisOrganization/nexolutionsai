@@ -43,17 +43,13 @@ const Nexolutions = () => {
           <div className="relative min-h-[70vh] flex flex-col justify-center">
             {/* Main Content */}
             <div className="text-left max-w-4xl">
-              <h1 className="text-6xl md:text-8xl lg:text-9xl font-extrabold leading-none text-white animate-fade-in-up">
-                AI Services<br />
-                for your Business<br />
-                Growth
-              </h1>
-              <p className="mt-8 max-w-xl text-lg md:text-xl font-inter text-nexo-gray-300 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-                We'll pump your company with AI. As a leading AI automation agency<br />
-                We deliver top results.
-              </p>
+              <img 
+                src="/lovable-uploads/1c0626f2-3663-4c9d-ba62-0d30a88b0304.png" 
+                alt="AI Services for your Business Growth" 
+                className="w-full max-w-3xl h-auto animate-fade-in-up"
+              />
               
-              {/* Buttons positioned under text */}
+              {/* Buttons positioned under image */}
               <div className="flex flex-col sm:flex-row gap-4 mt-12 animate-scale-in" style={{ animationDelay: '400ms' }}>
                 <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
                   <Button variant="nexo" size="xl">
