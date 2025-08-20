@@ -39,24 +39,16 @@ const Nexolutions = () => {
     }}>
         <div className="flex justify-between items-center mb-8 pt-24">
           <LanguageSwitcher />
-          <NexoLogo />
+          
         </div>
+        <ParallaxSection speed={0.3}>
           <div className="relative min-h-[70vh] flex flex-col justify-center">
             {/* Main Content */}
-          <div className="text-center max-w-6xl mx-auto relative">
-              <img src="/lovable-uploads/1c0626f2-3663-4c9d-ba62-0d30a88b0304.png" alt="AI Services for your Business Growth" className="w-full max-w-7xl h-auto mx-auto animate-fade-in-up" />
+          <div className="text-center max-w-6xl mx-auto">
+              <img src="/lovable-uploads/1c0626f2-3663-4c9d-ba62-0d30a88b0304.png" alt="AI Services for your Business Growth" className="w-full max-w-5xl h-auto mx-auto animate-fade-in-up" />
               
-              {/* Buttons positioned on the photo */}
-              <div className="absolute bottom-32 left-16 flex gap-4">
-                <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
-                  <Button variant="nexo" size="lg">
-                    Speak to Team
-                  </Button>
-                </a>
-                <Button variant="outline" size="lg" className="bg-white/10 text-white border-white/30 hover:bg-white/20">
-                  Our services
-                </Button>
-              </div>
+              {/* Buttons positioned under image */}
+              
             </div>
             
             {/* Bottom Right - Loved by founders */}
@@ -67,28 +59,20 @@ const Nexolutions = () => {
               
             </div>
           </div>
+        </ParallaxSection>
       </section>
 
       {/* Enhance Workflows */}
-      <section className="pt-24 pb-16 px-4 md:px-8 lg:px-32">
-        <div className="flex items-center justify-between max-w-7xl mx-auto">
-          <div className="flex-1 text-left">
-            <h2 className="font-jakarta font-semibold leading-[56px] tracking-[-3.36px]" style={{ fontSize: '56px' }}>
-              {t('enhance.title')}
-            </h2>
-            <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
-              <Button variant="nexo" size="xl" className="mt-8">
-                {t('hero.cta')}
-              </Button>
-            </a>
-          </div>
-          <div className="flex-shrink-0 ml-8">
-            <img 
-              src="/lovable-uploads/8ff8c146-e101-4f7d-ba49-91d0eb4bf510.png" 
-              alt="Vlad Makey LinkedIn Profile" 
-              className="w-80 h-auto rounded-lg shadow-lg"
-            />
-          </div>
+      <section className="pb-16 px-4 md:px-8 lg:px-32">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl md:text-5xl font-bold leading-tight">
+            {t('enhance.title')}
+          </h2>
+          <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
+            <Button variant="nexo" size="xl" className="mt-8">
+              {t('hero.cta')}
+            </Button>
+          </a>
         </div>
       </section>
 
