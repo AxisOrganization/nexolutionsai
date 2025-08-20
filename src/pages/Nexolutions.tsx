@@ -72,7 +72,7 @@ const Nexolutions = () => {
       </section>
 
       {/* Enhance Workflows */}
-      <section className="pb-16 px-4 md:px-8 lg:px-32">
+      <section className="pt-24 pb-16 px-4 md:px-8 lg:px-32">
         <div className="flex items-center justify-between max-w-7xl mx-auto">
           <div className="flex-1 text-left">
             <h2 className="font-jakarta font-semibold leading-[56px] tracking-[-3.36px]" style={{ fontSize: '56px' }}>
