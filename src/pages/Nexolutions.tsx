@@ -73,15 +73,24 @@ const Nexolutions = () => {
 
       {/* Enhance Workflows */}
       <section className="pb-16 px-4 md:px-8 lg:px-32">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-            {t('enhance.title')}
-          </h2>
-          <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
-            <Button variant="nexo" size="xl" className="mt-8">
-              {t('hero.cta')}
-            </Button>
-          </a>
+        <div className="flex items-center justify-between max-w-7xl mx-auto">
+          <div className="flex-1 text-left">
+            <h2 className="font-jakarta font-semibold leading-[56px] tracking-[-3.36px]" style={{ fontSize: '56px' }}>
+              {t('enhance.title')}
+            </h2>
+            <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
+              <Button variant="nexo" size="xl" className="mt-8">
+                {t('hero.cta')}
+              </Button>
+            </a>
+          </div>
+          <div className="flex-shrink-0 ml-8">
+            <img 
+              src="/lovable-uploads/8ff8c146-e101-4f7d-ba49-91d0eb4bf510.png" 
+              alt="Vlad Makey LinkedIn Profile" 
+              className="w-80 h-auto rounded-lg shadow-lg"
+            />
+          </div>
         </div>
       </section>
 
