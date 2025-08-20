@@ -32,36 +32,39 @@ const Nexolutions = () => {
           <NexoLogo />
         </div>
         <ParallaxSection speed={0.3}>
-          <div className="text-center max-w-6xl mx-auto">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-none whitespace-pre-line text-gradient animate-fade-in-up">
-              AI Services<br />for your Business<br />Growth
-            </h1>
-            <p className="mt-6 max-w-2xl mx-auto text-lg md:text-xl font-inter text-nexo-gray-300 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-              We'll pump your company with AI. As a leading AI automation agency<br />We deliver top results.
-            </p>
+          <div className="relative min-h-[80vh] flex flex-col justify-center">
+            {/* Main Content */}
+            <div className="text-left max-w-4xl">
+              <h1 className="text-6xl md:text-8xl lg:text-9xl font-extrabold leading-none text-white animate-fade-in-up">
+                AI Services<br />
+                for your Business<br />
+                Growth
+              </h1>
+              <p className="mt-8 max-w-xl text-lg md:text-xl font-inter text-nexo-gray-300 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
+                We'll pump your company with AI. As a leading AI automation agency<br />
+                We deliver top results.
+              </p>
+            </div>
             
-            {/* Bottom section with buttons and testimonial */}
-            <div className="mt-16 flex flex-col lg:flex-row items-end justify-between gap-8 animate-scale-in" style={{ animationDelay: '400ms' }}>
-              {/* Left side - Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 lg:self-start">
-                <MagneticButton variant="premium" size="xl" href={calendlyUrl}>
-                  Speak to Team
-                </MagneticButton>
-                <MagneticButton variant="hero" size="xl" href="#services">
-                  Our services
-                </MagneticButton>
+            {/* Bottom Right - Loved by founders */}
+            <div className="absolute bottom-8 right-8 flex items-center gap-4 animate-scale-in" style={{ animationDelay: '400ms' }}>
+              <p className="text-nexo-gray-400 text-sm">
+                Loved by founders<br />
+                worldwide
+              </p>
+              <div className="flex -space-x-2">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 border-2 border-background"></div>
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 border-2 border-background"></div>
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 border-2 border-background"></div>
               </div>
-              
-              {/* Right side - Loved by founders */}
-              <div className="flex flex-col items-center lg:items-end gap-3">
-                <div className="flex -space-x-2">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 border-2 border-background"></div>
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-400 to-green-600 border-2 border-background"></div>
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 border-2 border-background"></div>
-                </div>
-                <p className="text-sm text-nexo-gray-400">
-                  Loved by founders<br />worldwide
-                </p>
+            </div>
+            
+            {/* Bottom Center - Down Arrow */}
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+              <div className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
               </div>
             </div>
           </div>
