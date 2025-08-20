@@ -42,15 +42,15 @@ const Nexolutions = () => {
         <ParallaxSection speed={0.3}>
           <div className="relative min-h-[70vh] flex flex-col justify-center">
             {/* Main Content */}
-            <div className="text-left max-w-4xl">
+<div className="text-center max-w-6xl mx-auto">
               <img 
                 src="/lovable-uploads/1c0626f2-3663-4c9d-ba62-0d30a88b0304.png" 
                 alt="AI Services for your Business Growth" 
-                className="w-full max-w-3xl h-auto animate-fade-in-up"
+                className="w-full max-w-5xl h-auto mx-auto animate-fade-in-up"
               />
               
               {/* Buttons positioned under image */}
-              <div className="flex flex-col sm:flex-row gap-4 mt-12 animate-scale-in" style={{ animationDelay: '400ms' }}>
+              <div className="flex flex-col sm:flex-row gap-4 mt-12 justify-center animate-scale-in" style={{ animationDelay: '400ms' }}>
                 <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
                   <Button variant="nexo" size="xl">
                     Speak to Team
