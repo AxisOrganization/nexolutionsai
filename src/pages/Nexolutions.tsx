@@ -39,10 +39,26 @@ const Nexolutions = () => {
             <p className="mt-6 max-w-xl mx-auto text-lg md:text-xl font-inter text-nexo-gray-300 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
               {t('hero.subtitle')}
             </p>
-            <div className="mt-8 animate-scale-in" style={{ animationDelay: '400ms' }}>
-              <MagneticButton variant="premium" size="xl" href={calendlyUrl}>
-                {t('hero.cta')}
-              </MagneticButton>
+            
+            {/* Hero Buttons Section */}
+            <div className="mt-12 flex flex-col lg:flex-row items-center justify-center gap-8 animate-scale-in" style={{ animationDelay: '400ms' }}>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <MagneticButton variant="premium" size="xl" href={calendlyUrl}>
+                  Speak to Team
+                </MagneticButton>
+                <MagneticButton variant="hero" size="xl" href="#services">
+                  Our services
+                </MagneticButton>
+              </div>
+              
+              <div className="flex items-center gap-3 text-sm text-nexo-gray-400">
+                <span>Loved by founders worldwide</span>
+                <div className="flex -space-x-2">
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 border-2 border-background"></div>
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-green-600 border-2 border-background"></div>
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 border-2 border-background"></div>
+                </div>
+              </div>
             </div>
           </div>
         </ParallaxSection>
