@@ -44,28 +44,47 @@ const Nexolutions = () => {
         <ParallaxSection speed={0.3}>
           <div className="relative min-h-[70vh] flex flex-col justify-center">
             {/* Main Content */}
-          <div className="text-center max-w-6xl mx-auto relative">
-              <img src="/lovable-uploads/1c0626f2-3663-4c9d-ba62-0d30a88b0304.png" alt="AI Services for your Business Growth" className="w-full max-w-7xl h-auto mx-auto animate-fade-in-up" />
+          <div className="text-center max-w-6xl mx-auto">
+              <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
+                AI Services<br />
+                for your Business<br />
+                Growth
+              </h1>
+              <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                We'll jump your company with AI. As a leading AI automation agency<br />
+                We deliver top results
+              </p>
               
-              {/* Buttons positioned on the photo */}
-              <div className="absolute bottom-32 left-16 flex gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
                 <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
-                  <Button variant="nexo" size="lg">
+                  <Button variant="nexo" size="xl">
                     Speak to Team
                   </Button>
                 </a>
-                <Button variant="outline" size="lg" className="bg-white/10 text-white border-white/30 hover:bg-white/20">
+                <Button variant="outline" size="xl" className="bg-white/10 text-white border-white/30 hover:bg-white/20">
                   Our services
                 </Button>
               </div>
             </div>
             
             {/* Bottom Right - Loved by founders */}
-            
+            <div className="absolute bottom-16 right-16">
+              <div className="text-right">
+                <p className="text-white text-sm mb-2">Loved by founders</p>
+                <p className="text-white text-sm">worldwide</p>
+                <div className="flex -space-x-2 justify-end mt-2">
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-400 to-pink-400"></div>
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400"></div>
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-r from-green-400 to-emerald-400"></div>
+                </div>
+              </div>
+            </div>
             
             {/* Bottom Center - Down Arrow */}
             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-              
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m0 0V3" />
+              </svg>
             </div>
           </div>
         </ParallaxSection>
