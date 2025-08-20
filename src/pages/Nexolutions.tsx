@@ -44,11 +44,20 @@ const Nexolutions = () => {
         <ParallaxSection speed={0.3}>
           <div className="relative min-h-[70vh] flex flex-col justify-center">
             {/* Main Content */}
-          <div className="text-center max-w-6xl mx-auto">
+          <div className="text-center max-w-6xl mx-auto relative">
               <img src="/lovable-uploads/1c0626f2-3663-4c9d-ba62-0d30a88b0304.png" alt="AI Services for your Business Growth" className="w-full max-w-5xl h-auto mx-auto animate-fade-in-up" />
               
-              {/* Buttons positioned under image */}
-              
+              {/* Buttons positioned on the photo */}
+              <div className="absolute bottom-8 left-8 flex gap-4">
+                <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
+                  <Button variant="nexo" size="lg">
+                    Speak to Team
+                  </Button>
+                </a>
+                <Button variant="outline" size="lg" className="bg-white/10 text-white border-white/30 hover:bg-white/20">
+                  Our services
+                </Button>
+              </div>
             </div>
             
             {/* Bottom Right - Loved by founders */}
