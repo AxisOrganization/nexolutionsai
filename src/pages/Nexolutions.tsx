@@ -35,15 +35,11 @@ const Nexolutions = () => {
           <div className="relative min-h-[80vh] flex flex-col justify-center">
             {/* Main Content */}
             <div className="text-left max-w-4xl">
-              <h1 className="text-6xl md:text-8xl lg:text-9xl font-extrabold leading-none text-white animate-fade-in-up">
-                AI Services<br />
-                for your Business<br />
-                Growth
-              </h1>
-              <p className="mt-8 max-w-xl text-lg md:text-xl font-inter text-nexo-gray-300 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-                We'll pump your company with AI. As a leading AI automation agency<br />
-                We deliver top results.
-              </p>
+              <img 
+                src="/lovable-uploads/0688e47d-05ef-4b1d-8aff-3a91e5e88a7c.png" 
+                alt="Nexolutions AI Services" 
+                className="w-full max-w-2xl h-auto animate-fade-in-up"
+              />
             </div>
             
             {/* Bottom Right - Loved by founders */}
