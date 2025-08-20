@@ -48,7 +48,7 @@ const Nexolutions = () => {
               <img src="/lovable-uploads/1c0626f2-3663-4c9d-ba62-0d30a88b0304.png" alt="AI Services for your Business Growth" className="w-full max-w-5xl h-auto mx-auto animate-fade-in-up" />
               
               {/* Buttons positioned on the photo */}
-              <div className="absolute bottom-32 right-16 flex gap-4">
+              <div className="absolute bottom-32 left-16 flex gap-4">
                 <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
                   <Button variant="nexo" size="lg">
                     Speak to Team
