@@ -32,17 +32,18 @@ const Nexolutions = () => {
           <NexoLogo />
         </div>
         <ParallaxSection speed={0.3}>
-          <div className="text-center">
+          <div className="text-center max-w-6xl mx-auto">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-none whitespace-pre-line text-gradient animate-fade-in-up">
-              {t('hero.title')}
+              AI Services<br />for your Business<br />Growth
             </h1>
-            <p className="mt-6 max-w-xl mx-auto text-lg md:text-xl font-inter text-nexo-gray-300 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-              {t('hero.subtitle')}
+            <p className="mt-6 max-w-2xl mx-auto text-lg md:text-xl font-inter text-nexo-gray-300 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
+              We'll pump your company with AI. As a leading AI automation agency<br />We deliver top results.
             </p>
             
-            {/* Hero Buttons Section */}
-            <div className="mt-12 flex flex-col lg:flex-row items-center justify-center gap-8 animate-scale-in" style={{ animationDelay: '400ms' }}>
-              <div className="flex flex-col sm:flex-row gap-4">
+            {/* Bottom section with buttons and testimonial */}
+            <div className="mt-16 flex flex-col lg:flex-row items-end justify-between gap-8 animate-scale-in" style={{ animationDelay: '400ms' }}>
+              {/* Left side - Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 lg:self-start">
                 <MagneticButton variant="premium" size="xl" href={calendlyUrl}>
                   Speak to Team
                 </MagneticButton>
@@ -51,13 +52,16 @@ const Nexolutions = () => {
                 </MagneticButton>
               </div>
               
-              <div className="flex items-center gap-3 text-sm text-nexo-gray-400">
-                <span>Loved by founders worldwide</span>
+              {/* Right side - Loved by founders */}
+              <div className="flex flex-col items-center lg:items-end gap-3">
                 <div className="flex -space-x-2">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 border-2 border-background"></div>
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-green-600 border-2 border-background"></div>
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 border-2 border-background"></div>
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 border-2 border-background"></div>
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-400 to-green-600 border-2 border-background"></div>
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 border-2 border-background"></div>
                 </div>
+                <p className="text-sm text-nexo-gray-400">
+                  Loved by founders<br />worldwide
+                </p>
               </div>
             </div>
           </div>
