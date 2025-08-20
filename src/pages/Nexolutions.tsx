@@ -45,7 +45,7 @@ const Nexolutions = () => {
           <div className="relative min-h-[70vh] flex flex-col justify-center">
             {/* Main Content */}
           <div className="text-center max-w-6xl mx-auto relative">
-              <img src="/lovable-uploads/1c0626f2-3663-4c9d-ba62-0d30a88b0304.png" alt="AI Services for your Business Growth" className="w-full max-w-5xl h-auto mx-auto animate-fade-in-up" />
+              <img src="/lovable-uploads/1c0626f2-3663-4c9d-ba62-0d30a88b0304.png" alt="AI Services for your Business Growth" className="w-full max-w-7xl h-auto mx-auto animate-fade-in-up" />
               
               {/* Buttons positioned on the photo */}
               <div className="absolute bottom-32 left-16 flex gap-4">
