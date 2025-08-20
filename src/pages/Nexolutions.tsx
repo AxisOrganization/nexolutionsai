@@ -44,29 +44,19 @@ const Nexolutions = () => {
         <ParallaxSection speed={0.3}>
           <div className="relative min-h-[70vh] flex flex-col justify-center">
             {/* Main Content */}
-          <div className="max-w-7xl mx-auto relative">
-              <div className="flex items-center justify-between gap-12">
-                {/* Left side - Text content */}
-                <div className="flex-1 text-left">
-                  <h1 className="font-jakarta text-[56px] font-semibold leading-[56px] tracking-[-3.36px] text-white mb-8">
-                    AI Services for your Business Growth
-                  </h1>
-                  <div className="flex gap-4">
-                    <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
-                      <Button variant="nexo" size="lg">
-                        Speak to Team
-                      </Button>
-                    </a>
-                    <Button variant="outline" size="lg" className="bg-white/10 text-white border-white/30 hover:bg-white/20">
-                      Our services
-                    </Button>
-                  </div>
-                </div>
-                
-                {/* Right side - Profile image */}
-                <div className="flex-shrink-0">
-                  <img src="/lovable-uploads/71c86e26-f1df-4a8a-a309-cb677ce49d2d.png" alt="Vlad Makey Profile" className="w-80 h-auto animate-fade-in-up" />
-                </div>
+          <div className="text-center max-w-6xl mx-auto relative">
+              <img src="/lovable-uploads/1c0626f2-3663-4c9d-ba62-0d30a88b0304.png" alt="AI Services for your Business Growth" className="w-full max-w-7xl h-auto mx-auto animate-fade-in-up" />
+              
+              {/* Buttons positioned on the photo */}
+              <div className="absolute bottom-32 left-16 flex gap-4">
+                <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
+                  <Button variant="nexo" size="lg">
+                    Speak to Team
+                  </Button>
+                </a>
+                <Button variant="outline" size="lg" className="bg-white/10 text-white border-white/30 hover:bg-white/20">
+                  Our services
+                </Button>
               </div>
             </div>
             
