@@ -26,24 +26,50 @@ const Nexolutions = () => {
         className={`pt-8 pb-16 px-4 md:px-8 lg:px-32 transition-all duration-1000 ${
           heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
+        style={{ 
+          width: '1440px', 
+          height: '956px', 
+          marginTop: '-96px',
+          borderRadius: '32px',
+          maxWidth: '100%',
+          margin: '-96px auto 0 auto'
+        }}
       >
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex justify-between items-center mb-8 pt-24">
           <LanguageSwitcher />
           <NexoLogo />
         </div>
         <ParallaxSection speed={0.3}>
-          <div className="relative min-h-[80vh] flex flex-col justify-center">
+          <div className="relative min-h-[70vh] flex flex-col justify-center">
             {/* Main Content */}
             <div className="text-left max-w-4xl">
-              <img 
-                src="/lovable-uploads/0688e47d-05ef-4b1d-8aff-3a91e5e88a7c.png" 
-                alt="Nexolutions AI Services" 
-                className="w-full max-w-2xl h-auto animate-fade-in-up"
-              />
+              <h1 className="text-6xl md:text-8xl lg:text-9xl font-extrabold leading-none text-white animate-fade-in-up">
+                AI Services<br />
+                for your Business<br />
+                Growth
+              </h1>
+              <p className="mt-8 max-w-xl text-lg md:text-xl font-inter text-nexo-gray-300 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
+                We'll pump your company with AI. As a leading AI automation agency<br />
+                We deliver top results.
+              </p>
+              
+              {/* Buttons positioned under text */}
+              <div className="flex flex-col sm:flex-row gap-4 mt-12 animate-scale-in" style={{ animationDelay: '400ms' }}>
+                <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
+                  <Button variant="nexo" size="xl">
+                    Speak to Team
+                  </Button>
+                </a>
+                <a href="#services">
+                  <Button variant="outline" size="xl" className="border-white/20 text-white hover:bg-white/10">
+                    Our services
+                  </Button>
+                </a>
+              </div>
             </div>
             
             {/* Bottom Right - Loved by founders */}
-            <div className="absolute bottom-8 right-8 flex items-center gap-4 animate-scale-in" style={{ animationDelay: '400ms' }}>
+            <div className="absolute bottom-8 right-8 flex items-center gap-4 animate-scale-in" style={{ animationDelay: '600ms' }}>
               <p className="text-nexo-gray-400 text-sm">
                 Loved by founders<br />
                 worldwide
