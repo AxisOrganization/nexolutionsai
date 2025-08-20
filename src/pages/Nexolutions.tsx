@@ -41,7 +41,6 @@ const Nexolutions = () => {
           <LanguageSwitcher />
           <NexoLogo />
         </div>
-        <ParallaxSection speed={0.3}>
           <div className="relative min-h-[70vh] flex flex-col justify-center">
             {/* Main Content */}
           <div className="text-center max-w-6xl mx-auto relative">
@@ -68,7 +67,6 @@ const Nexolutions = () => {
               
             </div>
           </div>
-        </ParallaxSection>
       </section>
 
       {/* Enhance Workflows */}
